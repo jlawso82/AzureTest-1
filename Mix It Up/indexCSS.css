@@ -1,0 +1,90 @@
+body{
+    background-image: url("BackgroundImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: myHeadingFont;
+    src: url(CaveatBrush-Regular.ttf);
+}
+
+#age-vertification{
+    background-color: #A11E33;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: 40%;
+    border_radius: 3px;
+}
+
+#MixItUpLogo {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+}
+
+h1 {
+    font-family: myHeadingFont;
+    font-size: 24px;
+    color: black;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#DateOfBirth{
+    display: block;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+}
+
+
+
+.DOB{
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+
+#DayBlock{
+    display: inline-block;
+    float:left;
+    text-align: center;
+    margin: auto;
+    right: 0;
+}
+
+#MonthBlock{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+#YearBlock{
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+
+h3{
+    font-family: myHeadingFont;
+    font-size: 18px;
+    color: black;
+}
+
