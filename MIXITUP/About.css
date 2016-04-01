@@ -28,7 +28,7 @@
 	/*Font for normal text in the page*/
 	@font-face{
 		font-family: normalText;
-		src: url(NixieOne.ttf);
+		src: url(Montserrat-Light.otf);
 	}
 	
 /*NAV BAR*/
