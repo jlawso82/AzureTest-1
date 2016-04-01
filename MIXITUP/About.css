@@ -28,7 +28,7 @@
 	/*Font for normal text in the page*/
 	@font-face{
 		font-family: normalText;
-		src: url(Fonts/NixieOne.ttf);
+		src: url(NixieOne.ttf);
 	}
 	
 /*NAV BAR*/
