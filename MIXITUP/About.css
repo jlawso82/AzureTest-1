@@ -16,19 +16,19 @@
 	/*Font for headings*/
 	@font-face {
 	    font-family: myHeadingFont;
-		src: url(Fonts/breamcatcher.ttf);
+		src: url(breamcatcher.ttf);
 	}
 	
 	/*Font for the mix it up text in the nav bar*/
 	@font-face {
 	    font-family: mixItUpFont;
-	    src: url(Fonts/BoogieNightsNF.ttf);
+	    src: url(BoogieNightsNF.ttf);
 	}
 
 	/*Font for normal text in the page*/
 	@font-face{
 		font-family: normalText;
-		src: url(Montserrat-Light.otf);
+		src: url(NixieOne.ttf);
 	}
 	
 /*NAV BAR*/
