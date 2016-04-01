@@ -31,7 +31,7 @@ src:url(Montserrat-Light.otf);
 }
 /*Setting the font for the body section*/
 body{
-font-family: montserrat;
+font-family: normalText;
 }
 /*Setting properties for the h2 in the pages*/
 h2{
