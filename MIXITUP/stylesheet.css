@@ -96,7 +96,7 @@ padding:15px;
 .textinput1{
 	margin: -10px;
 	padding: 5px 18px;
-	font-family: montserrat;
+	font-family: normalText;
 	font-size:15px;
 	color:#666;
 	border:1px solid #000; border-right:0px;
@@ -106,7 +106,7 @@ padding:15px;
 .button1 {
 	margin: 0;
 	padding: 5px 7px;
-	font-family: montserrat;
+	font-family: normalText;
 	font-size:15px;
 	/*font-weight:bold;*/
 	outline: none;
@@ -162,7 +162,7 @@ nav .brand-logo {
   }
   /*Setting properties for the links*/
  #navLink a{
- font-family: montserrat;
+ font-family: normalText;
  color:white;
  text-decoration: none;
  display: inline-block;
@@ -175,14 +175,14 @@ nav .brand-logo {
  #navLink a{
  transition: background-color 0.5s ease;
   background: #a11e33;
- font-family: montserrat;
+ font-family: normalText;
  color:white;
  text-decoration: none;
  display: inline-block;
  float: right;
  }
  #navLink {
- font-family: montserrat;
+ font-family: normalText;
  color:white;
  text-decoration: none;
  display: inline-block;
@@ -197,7 +197,7 @@ transition: background 0.5s ease;
  }
   /*Setting properties for the links when hovered*/
    #navLink a:hover{
- font-family: montserrat;
+ font-family: normalText;
  color:white;
  text-decoration: none;
  display: inline-block;
