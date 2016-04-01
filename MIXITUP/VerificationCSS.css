@@ -1,0 +1,176 @@
+/*BACKGROUND SECTION*/
+	
+	/*Making the background image on large image scaling as the website scales*/
+	html {
+	    background: url("Images/BackgroundImage.jpg") no-repeat center center fixed;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
+	}
+
+
+/*FONTS*/
+	/*Font for headings*/
+	@font-face {
+	    font-family: myHeadingFont;
+		src: url(Fonts/breamcatcher.ttf);
+	}
+	
+	/*Font for the mix it up text in the nav bar*/
+	@font-face {
+	    font-family: mixItUpFont;
+	    src: url(Fonts/BoogieNightsNF.ttf);
+	}
+
+	/*Font for normal text in the page*/
+	@font-face{
+		font-family: normalText;
+		src: url(Fonts/Montserrat-Light.otf);
+	}
+
+/*AGE VERIFICATION*/
+
+	/*Main area to check age*/
+	#age-vertification{
+	    padding-top: 20px;
+	    background-color: rgba(161, 30, 51, 0.5);
+	    position: absolute;
+	    margin: auto;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    width: 40%;
+	    border_radius: 3px;
+	}
+
+	/*Inner area for text and images*/
+	#innerSquare{
+	    position: absolute;
+	    margin: 0 auto;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    padding: 50px;
+	}
+
+	/*Logo at top of page*/
+	#MixItUpLogo {
+	    display: block;
+	    margin: auto;
+	    padding: 10px;
+	    left: 0;
+	    right: 0;
+	    width: 200px;
+	    height: 200px;
+
+	}
+	
+	/*Heading to confirm DOB*/
+	#heading{
+	    font-family: myHeadingFont;
+	    font-size: 42px;
+	    color: white;
+	    display: block;
+	    margin: auto;
+	    text-align: center;
+	}
+	
+	.DOBHeading{
+		    font-family: myHeadingFont;
+		    font-size: 24px;
+		    color: white;
+	}
+
+/*DROPDOWN SECTION*/
+	
+	/*Date of birth block*/
+	#DateOfBirth{
+	    display: block;
+	    margin: auto;
+	    padding: 10px;
+	    text-align: center;
+	    width: 100%;
+	}
+	
+	/*Day, Month & Year Block*/
+	.DOB{
+	    padding: 10px;
+	    left: 0;
+	    right: 0;
+	}
+	
+	/*Day Dropdown*/
+	#DayBlock{
+	    display: inline-block;
+	    text-align: center;
+	    margin: auto;
+	    right: 0;
+	    width: 100px;
+	}
+
+	/*Month Dropdown*/
+	#MonthBlock{
+	    display: inline-block;
+	    margin: auto;
+	    text-align: center;
+	    padding: 10px;
+	    width: 100px;
+	}
+
+	/*Year dropdown*/
+	#YearBlock{
+	    display: inline-block;
+	    margin: auto;
+	    text-align: center;
+	    padding: 10px;
+	    width: 100px;
+	}
+	
+	/*Drop down styling*/
+	select.custom-dropdown {
+		    -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+		    -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+		    border: 0 !important;  /*REMOVES BORDER*/
+	
+		    background-color: #54484a;
+		    color: white;
+		    -webkit-border-radius: 5px;
+		    border-radius: 5px;
+		    font-size: 14px;
+		    padding: 10px;
+		    padding-right: 20px;
+		    width: 100%;
+		    cursor: pointer;
+		    border-color: #101010;
+	
+		    background: #333333 url(Images/drop-down-arrow.png) no-repeat right center;
+		    background-size: 40px 37px; /*TO ACCOUNT FOR @2X IMAGE FOR RETINA */
+		    font-family: normalText;
+		}
+	
+	/*Remove outline*/
+	select:focus {outline:0;}
+	
+/*BUTTON*/
+
+	/*Main button css*/
+	button{
+	    display: block;
+	    margin: auto;
+	    padding: 10px;
+	    text-align: center;
+	    width: 40%;
+	    background-color: #333333;
+	    color: white;
+	    border-color: #333333;
+	    font-family: normalText;
+	}
+	
+	/*When click change*/
+	button:focus {outline:0;}
+	
+
+	
