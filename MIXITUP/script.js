@@ -11,9 +11,10 @@ function getResultsFromAbsolute () {
 
             var htmlstring = "";
             //iterate over the collection of results
-            for (var i in response["result"])
+            var drinks=response["result"];
+;            for (var i in drinks)
             {
-            var x=response[i];
+            var x=drinks[i];
                var title = x["name"];
                 alert(title);
                 htmlstring += "<li>" + title + "</li>";
