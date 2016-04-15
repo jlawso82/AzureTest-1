@@ -8,22 +8,18 @@ function getResultsFromAbsolute () {
         dataType: 'jsonp',
         success: function(response){
             console.log(response);
+            var htmlstring = "";
+            //iterate over the collection of results
+            for (var i = 0; i < 10; i++) {
+                var title = jsondata.response[i].name;
+                htmlstring += "<li>" + title + "</li>";
+            }
+
+            //inject the HTML into our empty list
+            $("#helpmelist").html(htmlstring);
 
         }
     });
-}
-
-function addResultList(jsondata) {
-    //create a string to contain our HTML code to inject
-    var htmlstring = "";
-    //iterate over the collection of results
-    for (var i=0; i<10; i++){
-        var title = jsondata.response[i].name;
-        htmlstring += "<li>" + title + "</li>";
-    }
-
-    //inject the HTML into our empty list
-    $("#helpmelist").html(htmlstring);
 }
 
 
