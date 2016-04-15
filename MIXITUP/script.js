@@ -11,10 +11,16 @@ function getResultsFromAbsolute () {
 
             var htmlstring = "";
             //iterate over the collection of results
-            for (var i = 0; i < 10; i++) {
-                var title = response[i].name;
+            for (var i in response)
+            {
+            var x=response[i];
+               var title = x["name"];
                 htmlstring += "<li>" + title + "</li>";
             }
+            //for (var i = 0; i < 10; i++) {
+            //    var title = jsondata.response[i].name;
+            //    htmlstring += "<li>" + title + "</li>";
+            //}
 
             //inject the HTML into our empty list
             $("#helpmelist").html(htmlstring);
