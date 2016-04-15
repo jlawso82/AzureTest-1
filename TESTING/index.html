@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://assets.absolutdrinks.com/api/addb-0.5.2.min.js" type="text/javascript"></script>
+    <script src=" https://code.jquery.com/jquery-1.12.3.min.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+
+<script>
+
+    $.ajax({
+        type: "GET",
+        url: "http://addb.absolutdrinks.com/ingredients/?apiKey=358923c93ff0436bb76cb445300b70f1",
+        dataType: 'json',
+        success: function(response){
+            console.log(result);
+        }
+    });
+
+
+</script>
+</body>
+</html>
