@@ -11,7 +11,7 @@ function getResultsFromAbsolute () {
 
             var htmlstring = "";
             //iterate over the collection of results
-            for (var i in response)
+            for (var i in response["result"])
             {
             var x=response[i];
                var title = x["name"];
