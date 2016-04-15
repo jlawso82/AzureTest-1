@@ -11,7 +11,7 @@ function getResultsFromAbsolute () {
             var htmlstring = "";
             //iterate over the collection of results
             for (var i = 0; i < 10; i++) {
-                var title = jsonp.response[i].name;
+                var title = ajax.response[i].name;
                 htmlstring += "<li>" + title + "</li>";
             }
 
