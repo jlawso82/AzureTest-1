@@ -8,10 +8,14 @@ function getResultsFromAbsolute () {
         dataType: 'jsonp',
         success: function(response){
             console.log(response);
+
+            $.getJSON(url, function(jsondata){
+            });
+
             var htmlstring = "";
             //iterate over the collection of results
             for (var i = 0; i < 10; i++) {
-                var title = ajax.response[i].name;
+                var title = jsondata.response[i].name;
                 htmlstring += "<li>" + title + "</li>";
             }
 
