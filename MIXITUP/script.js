@@ -23,7 +23,7 @@ function getResultsFromAbsolute () {
             //}
 
             //inject the HTML into our empty list
-            $("#helpmelist").html(htmlstring);
+            $("#helpmelist").append(htmlstring);
 
         }
     });
