@@ -14,7 +14,7 @@ function getResultsFromAbsolute () {
             for (var i in response)
             {
             var x=response[i];
-               var title = x.name;
+               var title = x["name"];
                 alert(title);
                 htmlstring += "<li>" + title + "</li>";
             }
