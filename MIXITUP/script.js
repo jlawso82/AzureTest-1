@@ -19,7 +19,7 @@ function addResultList(jsondata) {
     //iterate over the collection of results
     for (var i=0; i<10; i++){
         var title = jsondata.response[i].name;
-        htmlstring += "<li>" + name + "</li>";
+        htmlstring += "<li>" + title + "</li>";
     }
 
     //inject the HTML into our empty list
