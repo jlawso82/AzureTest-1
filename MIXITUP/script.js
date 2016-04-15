@@ -13,7 +13,7 @@ function getResultsFromAbsolute () {
     });
 }
 
-function addResultList(response) {
+function addResultList(jsondata) {
     //create a string to contain our HTML code to inject
     var htmlstring = "";
     //iterate over the collection of results
