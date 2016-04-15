@@ -16,7 +16,6 @@ function getResultsFromAbsolute () {
             {
             var x=drinks[i];
                var title = x["name"];
-                alert(title);
                 htmlstring += "<li>" + title + "</li>";
             }
             //for (var i = 0; i < 10; i++) {
