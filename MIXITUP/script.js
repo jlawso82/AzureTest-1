@@ -4,7 +4,7 @@
 function getResultsFromAbsolute () {
     $.ajax({
         type: "GET",
-        url: "http://addb.absolutdrinks.com/ingredienttypes/?apiKey=358923c93ff0436bb76cb445300b70f1",
+        url: "http://addb.absolutdrinks.com/ingredients/?apiKey=358923c93ff0436bb76cb445300b70f1",
         dataType: 'jsonp',
         success: function(response){
             console.log(response);
