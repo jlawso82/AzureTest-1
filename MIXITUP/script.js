@@ -64,12 +64,8 @@ function getResults(){
                     url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
                     success: function(response){
 
-                        var cocktails = response.drinks;
-
-                        for(j=0; j< cocktails.length; j++){
-                            var y = cocktails[j];
-                            console.log("j is " + y)
-                        }
+                        var y = response.strInstructions;
+                        console.log(y);
 
 
 
