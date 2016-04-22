@@ -1,35 +1,3 @@
-/**
- * Created by 1403557 on 15/04/2016.
- */
-function getResultsFromAbsolute () {
-    $.ajax({
-        type: "GET",
-        url: "http://addb.absolutdrinks.com/ingredients/?apiKey=358923c93ff0436bb76cb445300b70f1&pageSize=500",
-        dataType: 'jsonp',
-        success: function(response){
-            console.log(response);
-
-            var htmlstring = "";
-            //iterate over the collection of results
-            var drinks=response["result"];
-            for (var i in drinks)
-            {
-            var x=drinks[i];
-               var title = x["name"];
-                htmlstring += "<li>" + title + "</li>";
-            }
-            //for (var i = 0; i < 10; i++) {
-            //    var title = jsondata.response[i].name;
-            //    htmlstring += "<li>" + title + "</li>";
-            //}
-
-            //inject the HTML into our empty list
-            $("#helpmelist").append(htmlstring);
-
-        }
-    });
-}
-
 function mixItUp(){
 
     var vodkaBox = $("#Vodka").is(":checked");
@@ -44,6 +12,42 @@ function mixItUp(){
     return x;
 }
 
+function createDiv(){
+
+    mNewObj = document.createElement('div');
+    mNewObj.id = "singleCard"
+    mNewObj.style.visibility = "show";
+    document.getElementById("cardContainer").appendChild(mNewObj);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function getAllInformation(){
+
+    var newCocktail = getResults();
+
+    $.ajax({
+        type: "GET",
+        url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + newCocktail,
+        success: function(response){
+
+            console.log(response.drinks);
+
+        }
+    })
+
+}
+
 function getResults(){
 
     var urlToUse = mixItUp();
@@ -51,35 +55,33 @@ function getResults(){
     $.ajax({
         type: "GET",
         url: urlToUse,
-        dataType: 'jsonp',
         success: function(response){
-            callback(response);
-            //console.log(response);
 
-            //var htmlstring = "";
+            console.log(response.drinks);
+
+            var htmlstring = "";
             //iterate over the collection of results
-            //var drinks=response["result"];
-            //for (var i in drinks)
-            //{
-                //var x=drinks[i];
-                //var title = x["name"];
-                //htmlstring += "<li>" + title + "</li>";
-            //}
-            //console.log(htmlstring);
+            var drinks = response.drinks;
+
+            for (var i in drinks){
+                var x = drinks[i];
+                console.log(x);
+                var title = x.strDrink;
+                htmlstring += "<li>" + title + "</li>";
+            }
+            console.log(htmlstring);
             //for (var i = 0; i < 10; i++) {
-            //    var title = jsondata.response[i].name;
-            //    htmlstring += "<li>" + title + "</li>";
+                //var title = jsondata.response[i].name;
+               //htmlstring += "<li>" + title + "</li>";
             //}
 
             //inject the HTML into our empty list
-            //$("#helpmelist").append(htmlstring);
+            $("#helpmelist").append(htmlstring);
         }
     });
 
 
-    function callback(jsonObj){
-        console.log(jsonObj);
-    }
+
 }
 
 
