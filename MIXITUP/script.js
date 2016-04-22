@@ -1,4 +1,4 @@
-function mixItUp(){
+function getSearchByIngredient(){
 
     var vodkaBox = $("#Vodka").is(":checked");
     var ginBox = $("#Gin").is(":checked");
@@ -6,7 +6,7 @@ function mixItUp(){
     var x;
 
     if(vodkaBox == true) {
-         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine&callback=?";
+         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine";
     }
 
     return x;
@@ -15,42 +15,15 @@ function mixItUp(){
 function createDiv(){
 
     mNewObj = document.createElement('div');
-    mNewObj.id = "singleCard"
+    mNewObj.id = "singleCard";
     mNewObj.style.visibility = "show";
     document.getElementById("cardContainer").appendChild(mNewObj);
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-function getAllInformation(){
-
-    var newCocktail = getResults();
-
-    $.ajax({
-        type: "GET",
-        url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + newCocktail,
-        success: function(response){
-
-            console.log(response.drinks);
-
-        }
-    })
-
-}
-
 function getResults(){
 
-    var urlToUse = mixItUp();
+    var urlToUse = getSearchByIngredient();
 
     $.ajax({
         type: "GET",
@@ -63,20 +36,53 @@ function getResults(){
             //iterate over the collection of results
             var drinks = response.drinks;
 
-            for (var i in drinks){
+            for (var i = 0; i < drinks.length; i++){
                 var x = drinks[i];
                 console.log(x);
                 var title = x.strDrink;
-                htmlstring += "<li>" + title + "</li>";
+                var thumbnail = x.strDrinkThumb;
+
+
+                mNewObj = document.createElement('div');
+                mNewObj.className = "singleCard";
+                mNewObj.id = ("singleCard" + i);
+                mNewObj.style.visibility = "show";
+                document.getElementById("cardContainer").appendChild(mNewObj);
+
+                //add header
+                newHeader = document.createElement('h3');
+                newHeader.innerHTML = title;
+                document.getElementById("singleCard" + i).appendChild(newHeader);
+
+                //add thumbnail
+                $('#singleCard' + i).append('<img id="theImg" src="'+thumbnail+'">')
+
+                //add
+
+                $.ajax({
+                    type: "GET",
+                    url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
+                    success: function(response){
+
+                        var cocktails = response.drinks;
+
+                        for(j=0; j< cocktails.length; j++){
+                            var y = cocktails[j];
+                            console.log("j is " + y)
+                        }
+
+
+
+
+                    }
+                })
+
+                //htmlstring += "<li>" + title + "</li>";
             }
-            console.log(htmlstring);
-            //for (var i = 0; i < 10; i++) {
-                //var title = jsondata.response[i].name;
-               //htmlstring += "<li>" + title + "</li>";
-            //}
+            //console.log(htmlstring);
 
             //inject the HTML into our empty list
-            $("#helpmelist").append(htmlstring);
+            //$("#helpmelist").append(htmlstring);
         }
     });
 
