@@ -115,13 +115,13 @@ function getResults(){
                             var y = cocktails[j];
                             var listInstructions = "";
                             var instructions = listInstructions.concat(y.strInstructions);
-                            console.log(instructions);
+                            //console.log(instructions);
                         }
 
                             newInstructions = document.createElement('p'); //Create the paragraph element
                             newInstructions.innerHTML = instructions;
+                            console.log(i);
                             document.getElementById("singleCard" + i).appendChild(newInstructions);
-                            console.log(j);
 
                     }
                 })
