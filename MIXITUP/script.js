@@ -1,3 +1,37 @@
+//Function to confirm the user is over the age of 18
+function checkDate(){
+
+    console.log("Im here")
+
+    //Get todays date and change the month setting
+    var todaysDate = new Date(); //Get todays date
+
+    var age = 18;
+
+    var userDay = $("#dayDropdown").val(); //Get the users day of birth
+    var userMonth = $("#monthDropdown").val(); //Get the users month of birth
+    var userYear = $("#yearDropdown").val(); //Get the users year of birth
+    var userDate = new Date();
+    userDate.setFullYear(userYear, userMonth - 1, userDay);
+
+    var currDate = new Date();
+    var setDate = new Date();
+
+    setDate.setFullYear(userDate.getFullYear() + age, userMonth-1, userDay);
+
+    if ((currDate-setDate) >= 0){
+        //You are above 18
+        window.location.replace("home.html");
+    }
+    else{
+        alert("below 18");
+    }
+
+
+
+
+}
+
 function getSearchByIngredient(){
 
     var vodkaBox = $("#Vodka").is(":checked");
@@ -30,7 +64,7 @@ function getResults(){
         url: urlToUse,
         success: function(response){
 
-            console.log(response.drinks);
+            //console.log(response.drinks);
 
             var htmlstring = "";
             //iterate over the collection of results
@@ -38,7 +72,7 @@ function getResults(){
 
             for (var i = 0; i < drinks.length; i++){
                 var x = drinks[i];
-                console.log(x);
+                //console.log(x);
                 var title = x.strDrink;
                 var thumbnail = x.strDrinkThumb;
 
@@ -64,7 +98,9 @@ function getResults(){
                     url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
                     success: function(response){
 
-                        var y = response.strInstructions;
+                        var cocktails = response.drinks;
+
+                        var y = cocktails.strInstructions;
                         console.log(y);
 
 
