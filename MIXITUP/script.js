@@ -94,19 +94,16 @@ function getResults(){
                 document.getElementById("singleCard" + i).appendChild(newHeader); //Add the header to the singleCard div
 
                 //Add thumbnail
-                if (thumbnail === null){
+                if (thumbnail == null){
                     //Add a basic image if no image is found
-                    $('#singleCard' + i).append('<img id="theImg" src="thumbnail.jpg">')
+                    $('#singleCard' + i).append('<img id="theImg" src="Images/thumbnail.jpg">')
                 }
                 else{
                     //Else add the current image
                     $('#singleCard' + i).append('<img id="theImg" src="'+thumbnail+'">')
                 }
 
-
-
-                //add
-
+                //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
                     url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
@@ -114,18 +111,23 @@ function getResults(){
 
                         var cocktails = response.drinks;
 
-                        var y = cocktails.strInstructions;
-                        console.log(y);
+                        for(var j = 0; j <cocktails.length; j++) {
+                            var y = cocktails[j];
+                            var listInstructions = "";
+                            var instructions = listInstructions.concat(y.strInstructions);
+                            console.log(instructions);
+                        }
 
-
-
+                            newInstructions = document.createElement('p'); //Create the paragraph element
+                            newInstructions.innerHTML = instructions;
+                            document.getElementById("singleCard" + i).appendChild(newInstructions);
+                            console.log(j);
 
                     }
                 })
 
                 //htmlstring += "<li>" + title + "</li>";
             }
-            //console.log(htmlstring);
 
             //inject the HTML into our empty list
             //$("#helpmelist").append(htmlstring);
