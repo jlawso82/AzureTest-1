@@ -84,6 +84,13 @@
 		    color: white;
 	}
 
+	h3{
+		font-family: myHeadingFont;
+		font-size: 24px;
+		color: white;
+		text-align: center;
+	}
+
 /*DROPDOWN SECTION*/
 	
 	/*Date of birth block*/
