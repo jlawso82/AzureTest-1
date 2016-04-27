@@ -77,6 +77,7 @@ function getResults(){
 
             //Go through the array to get the title and thumbnail of each cocktail
             for (var i = 0; i < drinks.length; i++){
+                console.log(i);
                 var x = drinks[i]; //Set x to the first element in the array
                 var title = x.strDrink; //Get the title of the cocktail
                 var thumbnail = x.strDrinkThumb; //Get the thumbnail of the cocktail
@@ -103,6 +104,7 @@ function getResults(){
                     $('#singleCard' + i).append('<img id="theImg" src="'+thumbnail+'">')
                 }
 
+
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
@@ -116,12 +118,13 @@ function getResults(){
                             var listInstructions = "";
                             var instructions = listInstructions.concat(y.strInstructions);
                             //console.log(instructions);
-                        }
 
                             newInstructions = document.createElement('p'); //Create the paragraph element
                             newInstructions.innerHTML = instructions;
-                            console.log(i);
                             document.getElementById("singleCard" + i).appendChild(newInstructions);
+
+                        }
+
 
                     }
                 })
