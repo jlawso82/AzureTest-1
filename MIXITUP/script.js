@@ -123,13 +123,13 @@ function getResults(){
                             var y = cocktails[j];
                             var listInstructions = "";
                             var instructions = listInstructions.concat(y.strInstructions);
-                            //console.log(instructions);
+                            console.log(instructions);
+                        }
 
                             newInstructions = document.createElement('p'); //Create the paragraph element
                             newInstructions.innerHTML = instructions;
-                            document.getElementById("singleCard" + i).appendChild(newInstructions);
+                            document.getElementById("singleCard" + k).appendChild(newInstructions);
 
-                        }
 
 
                     }
