@@ -61,7 +61,7 @@ function getSearchByIngredient(){
         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
     }
     else if(sambucaBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=sambuca";
     }
 
     return x;
