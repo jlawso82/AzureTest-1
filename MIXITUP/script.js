@@ -57,6 +57,12 @@ function getSearchByIngredient(){
     if(vodkaBox == true) {
          x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka";
     }
+    else if(ginBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
+    }
+    else if(sambucaBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
+    }
 
     return x;
 }
@@ -129,11 +135,7 @@ function getResults(){
                     }
                 })
 
-                //htmlstring += "<li>" + title + "</li>";
             }
-
-            //inject the HTML into our empty list
-            //$("#helpmelist").append(htmlstring);
         }
     });
 
