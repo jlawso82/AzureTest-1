@@ -72,6 +72,8 @@ margin-bottom: 5px;
     width: 200px;
     margin-left: 20px;
     margin-bottom: 20px;
+    float: left;
+    clear: left;
 }
 
 h3{
@@ -83,12 +85,12 @@ h3{
 }
 
 .singleCard{
-display:inline-block;
-border-radius: 10px;
-background: #e6e6e6;
-width: 100%;
-margin-bottom: 20px;
-margin-right: 20px;
+    display:inline-block;
+    border-radius: 10px;
+    background: #e6e6e6;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 .twoCards{
 float: clear;
@@ -224,6 +226,23 @@ transition: background 0.5s ease;
  margin-top: -15px;
 
  }
+
+.rightDiv{
+    display: inline-block;
+    text-align: right;
+    width: 70%;
+    border-radius: 10px;
+
+}
+
+.leftDiv{
+    display: inline-block;
+    text-align: right;
+    width: 30%;
+    border-radius: 10px;
+    float: left;
+}
+
   /*Setting properties for the links when hovered*/
    #navLink a:hover{
  font-family: normalText;
@@ -232,4 +251,45 @@ transition: background 0.5s ease;
  display: inline-block;
  float: right;
  background: #901A2D;
+ }
+
+ .titleText{
+     float: left;
+     font-family: myHeadingFont;
+     font-size: 38px;
+     color: white;
+     text-align: center;
+     background: #a11e33;
+     padding: 10px;
+     margin: 20px;
+ }
+
+ .instructionsTitle{
+     float: left;
+     clear: left;
+     margin: 10px;
+     padding-left: 10px;
+ }
+
+ .instructionsText{
+     float: left;
+     clear: left;
+     text-align: left;
+     margin-left: 20px;
+     margin-top: 0px;
+ }
+
+ .ingredientsTitle{
+     float: left;
+     clear: left;
+     margin: 10px;
+     padding-left: 10px;
+ }
+
+ .newIngredientsText{
+     float: left;
+     clear: left;
+     text-align: left;
+     margin-left: 20px;
+     margin-top: 0px;
  }

@@ -52,6 +52,7 @@ function getSearchByIngredient(){
     var vodkaBox = $("#Vodka").is(":checked");
     var ginBox = $("#Gin").is(":checked");
     var sambucaBox = $("#Sambuca").is(":checked");
+    var wineBox = $("#Wine").is(":checked");
     var x;
 
     if(vodkaBox == true) {
@@ -62,6 +63,9 @@ function getSearchByIngredient(){
     }
     else if(sambucaBox == true){
         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=sambuca";
+    }
+    else if(wineBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine";
     }
 
     return x;
@@ -87,29 +91,43 @@ function getResults(){
                 var x = drinks[i]; //Set x to the first element in the array
                 var title = x.strDrink; //Get the title of the cocktail
                 var thumbnail = x.strDrinkThumb; //Get the thumbnail of the cocktail
+                var drinkid = x.idDrink;
 
                 //Create a div for each cocktail
                 mNewObj = document.createElement('div'); //Create the div
                 mNewObj.className = "singleCard"; //Add a class to the card
-                mNewObj.id = ("singleCard" + i); //Create a new id
+                mNewObj.id = ("N" + drinkid); //Create a new id
                 mNewObj.style.visibility = "show"; //Show the div
                 document.getElementById("cardContainer").appendChild(mNewObj); //Add the new div to the main section on the web page
 
+                rightDiv = document.createElement('div'); //Create the div
+                rightDiv.className = "rightDiv"; //Add a class to the card
+                rightDiv.id = ("R" + drinkid); //Create a new id
+                rightDiv.style.visibility = "show"; //Show the div
+                document.getElementById("N" + drinkid).appendChild(rightDiv);
+
+                leftDiv = document.createElement('div'); //Create the div
+                leftDiv.className = "leftDiv"; //Add a class to the card
+                leftDiv.id = ("L" + drinkid); //Create a new id
+                leftDiv.style.visibility = "show"; //Show the div
+                document.getElementById("N" + drinkid).appendChild(leftDiv);
+                //$('#N' + newdrinkid).append(newIngredList));
+
                 //Create and add the header
-                newHeader = document.createElement('h3'); //Create a h3 element
+                newHeader = document.createElement('h4'); //Create a h3 element
+                newHeader.className = "titleText";
                 newHeader.innerHTML = title; //Set the new element to the title of the cocktail
-                document.getElementById("singleCard" + i).appendChild(newHeader); //Add the header to the singleCard div
+                document.getElementById("L" + drinkid).appendChild(newHeader); //Add the header to the singleCard div
 
                 //Add thumbnail
                 if (thumbnail == null){
                     //Add a basic image if no image is found
-                    $('#singleCard' + i).append('<img id="theImg" src="Images/thumbnail.jpg">')
+                    $('#L' + drinkid).append('<img id="theImg" src="Images/thumbnail.jpg">')
                 }
                 else{
                     //Else add the current image
-                    $('#singleCard' + i).append('<img id="theImg" src="'+thumbnail+'">')
+                    $('#L' + drinkid).append('<img id="theImg" src="'+thumbnail+'">')
                 }
-
 
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
@@ -118,17 +136,51 @@ function getResults(){
                     success: function(response){
 
                         var cocktails = response.drinks;
-
+                        //console.log(cocktails);
                         for(var j = 0; j <cocktails.length; j++) {
                             var y = cocktails[j];
+                            //console.log(y['strMeasure1']);
                             var listInstructions = "";
                             var instructions = listInstructions.concat(y.strInstructions);
-                            console.log(instructions);
-                        }
+                            //console.log(instructions);
+                            var newdrinkid = y.idDrink;
+
+                            newInstructionsTitle = document.createElement('h3');
+                            newInstructionsTitle.className = "instructionsTitle"
+                            newInstructionsTitle.innerHTML = "Instructions";
+                            $('#R' + newdrinkid).append(newInstructionsTitle);
 
                             newInstructions = document.createElement('p'); //Create the paragraph element
+                            newInstructions.className = "instructionsText";
                             newInstructions.innerHTML = instructions;
-                            document.getElementById("singleCard" + k).appendChild(newInstructions);
+                            $('#R' + newdrinkid).append(newInstructions);
+
+                            var measure = "";
+
+                            for(var k = 1; k <=15; k++){
+
+                                measure += y['strMeasure'+ k];
+                                measure += y['strIngredient'+ k];
+                                console.log(measure);
+                            }
+
+                            //document.getElementById('N' + newdrinkid).appendChild(newIngredlist); //Add the new div to the main section on the web page
+
+                            newIngredientsTitle = document.createElement('h3');
+                            newIngredientsTitle.className = "ingredientsTitle"
+                            newIngredientsTitle.innerHTML = "Ingredients";
+                            $('#R' + newdrinkid).append(newIngredientsTitle);
+
+
+                            newIngredients = document.createElement('p');
+                            newIngredients.className = "newIngredientsText";
+                            newIngredients.innerHTML = measure;
+                            $('#R' + newdrinkid).append(newIngredients);
+
+                        }
+
+
+
 
 
 
