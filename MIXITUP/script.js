@@ -53,6 +53,23 @@ function getSearchByIngredient(){
     var ginBox = $("#Gin").is(":checked");
     var sambucaBox = $("#Sambuca").is(":checked");
     var wineBox = $("#Wine").is(":checked");
+    var rumBox = $("#Rum").is(":checked");
+    var kahluaBox = $("#Kahlua").is(":checked");
+    var whiskeyBox = $("#Whiskey").is(":checked");
+    var vermouthBox = $("#Vermouth").is(":checked");
+    var brandyBox = $("#Brandy").is(":checked");
+    var absintheBox = $("#Absinthe").is(":checked");
+    var beerBox = $("#Beer").is(":checked");
+    var ciderBox = $("#Cider").is(":checked");
+
+    var orangeJuiceBox = $("#Orangejuice").is(":checked");
+    var lemonadeBox = $("#Lemonade").is(":checked");
+    var pineappleJuiceBox = $("#Pineapplejuice").is(":checked");
+    var lemonBox = $("#Lemon").is(":checked");
+    var limeBox = $("#Lime").is(":checked");
+    var cranberryJuiceBox = $("#Cranberryjuice").is(":checked");
+    var coconutMilkBox = $("#Coconutmilk").is(":checked");
+
     var x;
 
     if(vodkaBox == true) {
@@ -67,11 +84,64 @@ function getSearchByIngredient(){
     else if(wineBox == true){
         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine";
     }
+    else if(rumBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum";
+    }
+    else if(kahluaBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=kahlua";
+    }
+    else if(whiskeyBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=whiskey";
+    }
+    else if(vermouthBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vermouth";
+    }
+    else if(brandyBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=brandy";
+    }
+    else if(absintheBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=absinthe";
+    }
+    else if(beerBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=beer";
+    }
+    else if(ciderBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=cider";
+    }
+    else if(orangeJuiceBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Orange juice";
+    }
+    else if(lemonadeBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemonade";
+    }
+    else if(pineappleJuiceBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Pineapple juice";
+    }
+    else if(lemonBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemon";
+    }
+    else if(limeBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lime";
+    }
+    else if(cranberryJuiceBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Cranberry juice";
+    }
+    else if(coconutMilkBox == true){
+        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Coconut milk";
+    }
+    else{
+        x = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
+    }
 
     return x;
 }
 
+function clear(){
+    history.go(0);
+}
+
 function getResults(){
+
 
     //URL for each ingredient that is selected
     var urlToUse = getSearchByIngredient();
@@ -159,9 +229,11 @@ function getResults(){
 
                             for(var k = 1; k <=15; k++){
 
-                                measure += y['strMeasure'+ k];
-                                measure += y['strIngredient'+ k];
-                                console.log(measure);
+                                if(y['strMeasure'+ k] != "" && y['strIngredient'+ k] != "" ){
+                                    measure += y['strMeasure'+ k];
+                                    measure += y['strIngredient'+ k];
+                                    measure += "; "
+                                }
                             }
 
                             //document.getElementById('N' + newdrinkid).appendChild(newIngredlist); //Add the new div to the main section on the web page

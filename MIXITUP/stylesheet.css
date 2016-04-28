@@ -70,7 +70,9 @@ margin-bottom: 5px;
 #theImg{
     height: 200px;
     width: 200px;
-    margin-left: 20px;
+    display: block;
+    margin-left: 30%;
+    margin-right: 70%;
     margin-bottom: 20px;
     float: left;
     clear: left;
@@ -230,8 +232,10 @@ transition: background 0.5s ease;
 .rightDiv{
     display: inline-block;
     text-align: right;
-    width: 70%;
+    width: 60%;
     border-radius: 10px;
+    margin: 10px;
+    float: right;
 
 }
 
@@ -239,7 +243,7 @@ transition: background 0.5s ease;
     display: inline-block;
     text-align: right;
     width: 30%;
-    border-radius: 10px;
+    border-radius: 20px;
     float: left;
 }
 
@@ -258,6 +262,7 @@ transition: background 0.5s ease;
      font-family: myHeadingFont;
      font-size: 38px;
      color: white;
+     width: 100%;
      text-align: center;
      background: #a11e33;
      padding: 10px;
@@ -292,4 +297,33 @@ transition: background 0.5s ease;
      text-align: left;
      margin-left: 20px;
      margin-top: 0px;
+ }
+
+ .buttons{
+     width: 115px;
+     height: 100px;
+     float: left;
+ }
+
+ #buttondiv{
+     margin: 10px;
+     height: 100px;
+ }
+
+ .ingredients{
+     margin: 10px;
+ }
+
+ #mixers {
+     height: 30px;
+ }
+
+ #mixitupbutton {
+     float: left;
+     margin-left: 20%;
+ }
+
+ #mixitupclear{
+     float: right;
+     margin-right: 20%;
  }

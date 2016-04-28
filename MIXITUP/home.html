@@ -34,9 +34,6 @@
 		<div class="ingredients">
 			<h2>Spirits</h2>
 				<div id="ssheader" id="spirits">
-					<form id="usearch" method="get" action="insertURL">
-						<input type="text" id="tfq2b" class="textinput1" name="q" size="20" maxlength="120" value="Search for spirit"><input type="submit" value=">" class="button1">
-					</form>
 				<div class="spiritclear"></div>
 				</div>
 				<div id="spiritsScroll" style="width:100%px; height:250px;line-height:1.5em; overflow:scroll; overflow-x: hidden; padding:5px;">
@@ -60,142 +57,97 @@
 							<input type="checkbox" id="Wine" name="Wine" value="4">Wine<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit5" value="Spirit5">Spirit5<br>
+							<input type="checkbox" id="Rum" name="Rum" value="5">Rum<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit6" value="Spirit6">Spirit6<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="spirit7" value="Spirit7">Spirit7<br>
+							<input type="checkbox" id="Kahlua" name="Kahlua" value="6">Kahlua<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit8" value="Spirit8">Spirit8<br>
+							<input type="checkbox" id="Whiskey" name="Whiskey" value="7">Whiskey<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit9" value="Spirit9">Spirit9<br>
+							<input type="checkbox" id="Vermouth" name="Vermouth" value="8">Vermouth<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit10" value="Spirit10">Spirit10<br>
+							<input type="checkbox" id="Brandy" name="Brandy" value="9">Brandy<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit11" value="Spirit11">Spirit11<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="spirit12" value="Spirit12">Spirit12<br>
+							<input type="checkbox" id="Absinthe" name="Absinthe" value="10">Absinthe<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit13" value="Spirit13">Spirit13<br>
+							<input type="checkbox" id="Beer" name="Beer" value="11">Beer<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="spirit14" value="Spirit14">Spirit14<br>
+							<input type="checkbox" id="Cider" name="Cider" value="12">Cider<br>
 						</form>
 					</div>
-
 				</div>
 		</div>
+			<div id = "buttondiv">
+				<img src="Images/Mix it up button.png" id = "mixitupbutton" class="buttons" onclick="getResults()">
+				<img src="Images/Mix it up clear.png" id = "mixitupclear" class="buttons" onclick="history.go()">
+			</div>
+
 		<div class="ingredients" id="mixers">
 			<h2>Mixers & Fruit</h2>
 				<div id="ssheader" id="spirits">
-					<form id="usearch" method="get" action="insertURL">
-						<input type="text" id="tfq2b" class="textinput1" name="q" size="20" maxlength="120" value="Search for mixer or fruit"><input type="submit" value=">" class="button1">
-					</form>
 				<div class="spiritclear"></div>
 				</div>
 				<div id="spiritsScroll" style="width:100%px; height:250px;line-height:1.5em; overflow:scroll; overflow-x: hidden; padding:5px;">
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer1" value="mixer1" id="entry">mixer1<br>
+							<input type="checkbox" id="Orangejuice" name="OrangeJuice" value="1">Orange Juice<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer2" value="mixer2">mixer2<br>
+							<input type="checkbox" id="Lemonade" name="Lemonade" value="2">Lemonade<br>
 						</form>
 					</div>
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer3" value="mixer3">mixer3<br>
+							<input type="checkbox" id="Pineapplejuice" name="PineappleJuice" value="3">Pineapple Juice<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer4" value="mixer4">mixer4<br>
+							<input type="checkbox" id="Lemon" name="Lemon" value="4">Lemon<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer5" value="mixer5">mixer5<br>
+							<input type="checkbox" id="Lime" name="Lime" value="5">Lime<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer6" value="mixer6">mixer6<br>
+							<input type="checkbox" id="Cranberryjuice" name="CranberryJuice" value="6">Cranberry Juice<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
+					<div class="checkboxTest">
 						<form>
-							<input type="checkbox" name="mixer7" value="mixer7">mixer7<br>
+							<input type="checkbox" id="Coconutmilk" name="CoconutMilk" value="7">Coconut Milk<br>
 						</form>
 					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="mixer8" value="mixer8">mixer8<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="mixer9" value="mixer9">mixer9<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="fruit1" value="fruit1">fruit1<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="fruit2" value="fruit3">fruit3<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="fruit4" value="fruit4">fruit4<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="fruit5" value="fruit5">fruit5<br>
-						</form>
-					</div> 
-					<div id="checkboxTest">
-						<form>
-							<input type="checkbox" name="fruit6" value="fruit6">fruit6<br>
-						</form>
-					</div>
+
 				</div>
-				<div>
-					<button id="MIXITUPButton" name="MIXITUP" value="Click Me!" onclick="getResults()">MIX IT UP</button>
-				</div>
+
 </div>	
 </div>			
 <!-------------------------------------- CARDS -------------------------------------------->
