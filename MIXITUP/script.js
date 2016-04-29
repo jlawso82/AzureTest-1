@@ -4,8 +4,7 @@ var counter = 0; //Counts
 //Function to confirm the user is over the age of 18
 function checkDate(){
 
-    //Get todays date and change the month setting
-    var todaysDate = new Date(); //Get todays date
+
 
     //Set the minimum age
     var age = 18;
@@ -32,7 +31,7 @@ function checkDate(){
         if (counter === 0){
             //Display a warning message that the user cannot enter
             warningMessage = document.createElement('h3');
-            warningMessage.innerHTML = "Sorry! You're not old enough to Mix It Up :("
+            warningMessage.innerHTML = "Sorry! You're not old enough to Mix It Up :(";
             warningMessage.style.visibility = "show";
             document.getElementById("innerSquare").appendChild(warningMessage);
         }
@@ -141,6 +140,7 @@ function getSearchByIngredient(){
     return x;
 }
 
+//Function to return the results after clicking mix it up
 function getResults(){
 
     //URL for each ingredient that is selected
@@ -152,42 +152,43 @@ function getResults(){
         url: urlToUse,
         success: function(response){
 
-            //Iterate over the collection of results
+            //Get the collection of drinks
             var drinks = response.drinks;
 
             //Go through the array to get the title and thumbnail of each cocktail
             for (var i = 0; i < drinks.length; i++){
-                console.log(i);
+
+                //Set x to the first drink in the array
                 var x = drinks[i]; //Set x to the first element in the array
+
                 var title = x.strDrink; //Get the title of the cocktail
                 var thumbnail = x.strDrinkThumb; //Get the thumbnail of the cocktail
-                var drinkid = x.idDrink;
+                var drinkid = x.idDrink; //Get the id of the cocktail
 
                 //Create a div for each cocktail
                 mNewObj = document.createElement('div'); //Create the div
                 mNewObj.className = "singleCard"; //Add a class to the card
-                mNewObj.id = ("N" + drinkid); //Create a new id
+                mNewObj.id = ("N" + drinkid); //Create a new id - using the drink id
                 mNewObj.style.visibility = "show"; //Show the div
                 document.getElementById("cardContainer").appendChild(mNewObj); //Add the new div to the main section on the web page
 
-                rightDiv = document.createElement('div'); //Create the div
+                rightDiv = document.createElement('div'); //Create the right hand side div
                 rightDiv.className = "rightDiv"; //Add a class to the card
-                rightDiv.id = ("R" + drinkid); //Create a new id
+                rightDiv.id = ("R" + drinkid); //Create a new id - using the drink id
                 rightDiv.style.visibility = "show"; //Show the div
-                document.getElementById("N" + drinkid).appendChild(rightDiv);
+                document.getElementById("N" + drinkid).appendChild(rightDiv); //Add the new div to the right hand side of the card container div
 
-                leftDiv = document.createElement('div'); //Create the div
+                leftDiv = document.createElement('div'); //Create the left hand side div
                 leftDiv.className = "leftDiv"; //Add a class to the card
-                leftDiv.id = ("L" + drinkid); //Create a new id
+                leftDiv.id = ("L" + drinkid); //Create a new id - using the drink id
                 leftDiv.style.visibility = "show"; //Show the div
-                document.getElementById("N" + drinkid).appendChild(leftDiv);
-                //$('#N' + newdrinkid).append(newIngredList));
+                document.getElementById("N" + drinkid).appendChild(leftDiv); //Add the new div to the left hand side of the card container div
 
                 //Create and add the header
-                newHeader = document.createElement('h4'); //Create a h3 element
-                newHeader.className = "titleText";
+                newHeader = document.createElement('h4'); //Create a h4 element
+                newHeader.className = "titleText"; //Call the h4 element to the titleText
                 newHeader.innerHTML = title; //Set the new element to the title of the cocktail
-                document.getElementById("L" + drinkid).appendChild(newHeader); //Add the header to the singleCard div
+                document.getElementById("L" + drinkid).appendChild(newHeader); //Add the header to leftDiv
 
                 //Add thumbnail
                 if (thumbnail == null){
@@ -205,49 +206,62 @@ function getResults(){
                     url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
                     success: function(response){
 
+                        //Get the response from the API
                         var cocktails = response.drinks;
-                        //console.log(cocktails);
+
+                        //Create a for loop to iterate through every cocktail
                         for(var j = 0; j <cocktails.length; j++) {
+
+                            //Get the first cocktail
                             var y = cocktails[j];
-                            //console.log(y['strMeasure1']);
+
+                            //Create a string to store the instructions
                             var listInstructions = "";
+
+                            //Add each instruction on
                             var instructions = listInstructions.concat(y.strInstructions);
-                            //console.log(instructions);
+
+                            //Get the drink id
                             var newdrinkid = y.idDrink;
 
-                            newInstructionsTitle = document.createElement('h3');
-                            newInstructionsTitle.className = "instructionsTitle"
-                            newInstructionsTitle.innerHTML = "Instructions";
-                            $('#R' + newdrinkid).append(newInstructionsTitle);
+                            //Create the instructions title
+                            newInstructionsTitle = document.createElement('h3'); //Create the h3 title element
+                            newInstructionsTitle.className = "instructionsTitle"; //Add a class name
+                            newInstructionsTitle.innerHTML = "Instructions"; //Make the title "instructions"
+                            $('#R' + newdrinkid).append(newInstructionsTitle); //Add to the right div
 
+                            //Create the instructions text
                             newInstructions = document.createElement('p'); //Create the paragraph element
-                            newInstructions.className = "instructionsText";
-                            newInstructions.innerHTML = instructions;
-                            $('#R' + newdrinkid).append(newInstructions);
+                            newInstructions.className = "instructionsText"; //Add a class name
+                            newInstructions.innerHTML = instructions; //Add the instructions from the API to the newInstructions element
+                            $('#R' + newdrinkid).append(newInstructions); //Add to the right div
 
+
+                            //Create a measure variable to store the measures
                             var measure = "";
 
+                            //Loop through to get the measures (maximum 15)
                             for(var k = 1; k <=15; k++){
 
+                                //If statement to check the measures and ingredients aren't empty
                                 if(y['strMeasure'+ k] != "" && y['strIngredient'+ k] != "" ){
-                                    measure += y['strMeasure'+ k];
-                                    measure += y['strIngredient'+ k];
-                                    measure += "; "
+                                    measure += y['strMeasure'+ k]; //Add the measure
+                                    measure += y['strIngredient'+ k]; //Add the ingredient
+                                    measure += "; "; //Add a semi colon
                                 }
                             }
 
-                            //document.getElementById('N' + newdrinkid).appendChild(newIngredlist); //Add the new div to the main section on the web page
+                            //Create the ingredients title
+                            newIngredientsTitle = document.createElement('h3'); //Create the h3 title element
+                            newIngredientsTitle.className = "ingredientsTitle"; //Add a class name
+                            newIngredientsTitle.innerHTML = "Ingredients"; //Make the title "ingredients"
+                            $('#R' + newdrinkid).append(newIngredientsTitle); //Add to the right div
 
-                            newIngredientsTitle = document.createElement('h3');
-                            newIngredientsTitle.className = "ingredientsTitle"
-                            newIngredientsTitle.innerHTML = "Ingredients";
-                            $('#R' + newdrinkid).append(newIngredientsTitle);
-
-
-                            newIngredients = document.createElement('p');
-                            newIngredients.className = "newIngredientsText";
-                            newIngredients.innerHTML = measure;
-                            $('#R' + newdrinkid).append(newIngredients);
+                            //Create the ingredients text
+                            newIngredients = document.createElement('p'); //Create the paragraph element
+                            newIngredients.className = "newIngredientsText"; //Add a class name
+                            newIngredients.innerHTML = measure; //Add the ingredients from the API to the newIngredients element
+                            $('#R' + newdrinkid).append(newIngredients); //Add to the right div
 
                         }
                     }
