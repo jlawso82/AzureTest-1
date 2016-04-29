@@ -77,7 +77,7 @@ function getSearchByIngredient(){
 
     //If statement to see what box is selected
     if(vodkaBox == true) {
-         x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka";
+         x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php&i=Vodka";
     }
     else if(ginBox == true){
         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
@@ -204,7 +204,7 @@ function getResults(){
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
-                    url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
+                    url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php&s=" + title,
                     success: function(response){
 
                         //Get the response from the API
