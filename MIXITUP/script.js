@@ -204,7 +204,7 @@ function getResults(){
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
-                    url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
+                    url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
                     success: function(response){
 
                         //Get the response from the API
