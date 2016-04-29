@@ -49,6 +49,7 @@ function checkDate(){
 //Function to check what checkboxes are selected
 function getSearchByIngredient(){
 
+    //Get input for the spirits checkboxes
     var vodkaBox = $("#Vodka").is(":checked");
     var ginBox = $("#Gin").is(":checked");
     var sambucaBox = $("#Sambuca").is(":checked");
@@ -62,6 +63,7 @@ function getSearchByIngredient(){
     var beerBox = $("#Beer").is(":checked");
     var ciderBox = $("#Cider").is(":checked");
 
+    //Get input for the mixers and fruit checkboxes
     var orangeJuiceBox = $("#Orangejuice").is(":checked");
     var lemonadeBox = $("#Lemonade").is(":checked");
     var pineappleJuiceBox = $("#Pineapplejuice").is(":checked");
@@ -70,8 +72,10 @@ function getSearchByIngredient(){
     var cranberryJuiceBox = $("#Cranberryjuice").is(":checked");
     var coconutMilkBox = $("#Coconutmilk").is(":checked");
 
+    //Declare the return variable
     var x;
 
+    //If statement to see what box is selected
     if(vodkaBox == true) {
          x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka";
     }
@@ -133,15 +137,11 @@ function getSearchByIngredient(){
         x = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
     }
 
+    //Return x
     return x;
 }
 
-function clear(){
-    history.go(0);
-}
-
 function getResults(){
-
 
     //URL for each ingredient that is selected
     var urlToUse = getSearchByIngredient();
@@ -250,21 +250,11 @@ function getResults(){
                             $('#R' + newdrinkid).append(newIngredients);
 
                         }
-
-
-
-
-
-
                     }
                 })
-
             }
         }
     });
-
-
-
 }
 
 
