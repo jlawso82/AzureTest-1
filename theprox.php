@@ -20,4 +20,5 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL, $finalurl);
 $result = curl_exec($ch);
 curl_close($ch);
+echo header('Content-Type: application/json');
 echo $result;
