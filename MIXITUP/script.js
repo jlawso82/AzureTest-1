@@ -204,67 +204,67 @@ function getResults(){
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
-                    url: "http://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + title,
+                    url: "http://www.thecocktaildb.com/api/json/v1/1/search.php&s=" + title,
                     success: function(response){
-                        console.log(response);
+
                         //Get the response from the API
                         var cocktails = response.drinks;
 
-                            //Create a for loop to iterate through every cocktail
-                            for (var j = 0; j < cocktails.length; j++) {
+                        //Create a for loop to iterate through every cocktail
+                        for(var j = 0; j <cocktails.length; j++) {
 
-                                //Get the first cocktail
-                                var y = cocktails[j];
+                            //Get the first cocktail
+                            var y = cocktails[j];
 
-                                //Create a string to store the instructions
-                                var listInstructions = "";
+                            //Create a string to store the instructions
+                            var listInstructions = "";
 
-                                //Add each instruction on
-                                var instructions = listInstructions.concat(y.strInstructions);
+                            //Add each instruction on
+                            var instructions = listInstructions.concat(y.strInstructions);
 
-                                //Get the drink id
-                                var newdrinkid = y.idDrink;
+                            //Get the drink id
+                            var newdrinkid = y.idDrink;
 
-                                //Create the instructions title
-                                newInstructionsTitle = document.createElement('h3'); //Create the h3 title element
-                                newInstructionsTitle.className = "instructionsTitle"; //Add a class name
-                                newInstructionsTitle.innerHTML = "Instructions"; //Make the title "instructions"
-                                $('#R' + newdrinkid).append(newInstructionsTitle); //Add to the right div
+                            //Create the instructions title
+                            newInstructionsTitle = document.createElement('h3'); //Create the h3 title element
+                            newInstructionsTitle.className = "instructionsTitle"; //Add a class name
+                            newInstructionsTitle.innerHTML = "Instructions"; //Make the title "instructions"
+                            $('#R' + newdrinkid).append(newInstructionsTitle); //Add to the right div
 
-                                //Create the instructions text
-                                newInstructions = document.createElement('p'); //Create the paragraph element
-                                newInstructions.className = "instructionsText"; //Add a class name
-                                newInstructions.innerHTML = instructions; //Add the instructions from the API to the newInstructions element
-                                $('#R' + newdrinkid).append(newInstructions); //Add to the right div
+                            //Create the instructions text
+                            newInstructions = document.createElement('p'); //Create the paragraph element
+                            newInstructions.className = "instructionsText"; //Add a class name
+                            newInstructions.innerHTML = instructions; //Add the instructions from the API to the newInstructions element
+                            $('#R' + newdrinkid).append(newInstructions); //Add to the right div
 
 
-                                //Create a measure variable to store the measures
-                                var measure = "";
+                            //Create a measure variable to store the measures
+                            var measure = "";
 
-                                //Loop through to get the measures (maximum 15)
-                                for (var k = 1; k <= 15; k++) {
+                            //Loop through to get the measures (maximum 15)
+                            for(var k = 1; k <=15; k++){
 
-                                    //If statement to check the measures and ingredients aren't empty
-                                    if (y['strMeasure' + k] != "" && y['strIngredient' + k] != "") {
-                                        measure += y['strMeasure' + k]; //Add the measure
-                                        measure += y['strIngredient' + k]; //Add the ingredient
-                                        measure += "; "; //Add a semi colon
-                                    }
+                                //If statement to check the measures and ingredients aren't empty
+                                if(y['strMeasure'+ k] != "" && y['strIngredient'+ k] != "" ){
+                                    measure += y['strMeasure'+ k]; //Add the measure
+                                    measure += y['strIngredient'+ k]; //Add the ingredient
+                                    measure += "; "; //Add a semi colon
                                 }
-
-                                //Create the ingredients title
-                                newIngredientsTitle = document.createElement('h3'); //Create the h3 title element
-                                newIngredientsTitle.className = "ingredientsTitle"; //Add a class name
-                                newIngredientsTitle.innerHTML = "Ingredients"; //Make the title "ingredients"
-                                $('#R' + newdrinkid).append(newIngredientsTitle); //Add to the right div
-
-                                //Create the ingredients text
-                                newIngredients = document.createElement('p'); //Create the paragraph element
-                                newIngredients.className = "newIngredientsText"; //Add a class name
-                                newIngredients.innerHTML = measure; //Add the ingredients from the API to the newIngredients element
-                                $('#R' + newdrinkid).append(newIngredients); //Add to the right div
-
                             }
+
+                            //Create the ingredients title
+                            newIngredientsTitle = document.createElement('h3'); //Create the h3 title element
+                            newIngredientsTitle.className = "ingredientsTitle"; //Add a class name
+                            newIngredientsTitle.innerHTML = "Ingredients"; //Make the title "ingredients"
+                            $('#R' + newdrinkid).append(newIngredientsTitle); //Add to the right div
+
+                            //Create the ingredients text
+                            newIngredients = document.createElement('p'); //Create the paragraph element
+                            newIngredients.className = "newIngredientsText"; //Add a class name
+                            newIngredients.innerHTML = measure; //Add the ingredients from the API to the newIngredients element
+                            $('#R' + newdrinkid).append(newIngredients); //Add to the right div
+
+                        }
                     }
                 })
             }
