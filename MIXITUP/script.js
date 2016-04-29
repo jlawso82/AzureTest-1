@@ -77,7 +77,7 @@ function getSearchByIngredient(){
 
     //If statement to see what box is selected
     if(vodkaBox == true) {
-         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka";
+         x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php&i=Vodka";
     }
     else if(ginBox == true){
         x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
