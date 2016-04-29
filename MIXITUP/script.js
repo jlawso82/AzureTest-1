@@ -71,6 +71,7 @@ function getSearchByIngredient(){
     var cranberryJuiceBox = $("#Cranberryjuice").is(":checked");
     var coconutMilkBox = $("#Coconutmilk").is(":checked");
 
+
     //Declare the return variable
     var x;
 
