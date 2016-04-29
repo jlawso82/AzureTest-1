@@ -221,7 +221,7 @@ nav .brand-logo {
  float: right;
  }
 
-#nav{
+.nav{
 transition: background 0.5s ease;
  display:inline-block;
  margin-right: 10px;
