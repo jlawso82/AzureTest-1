@@ -80,61 +80,61 @@ function getSearchByIngredient(){
          x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php&i=Vodka";
     }
     else if(ginBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin";
     }
     else if(sambucaBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=sambuca";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=sambuca";
     }
     else if(wineBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=wine";
     }
     else if(rumBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum";
     }
     else if(kahluaBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=kahlua";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=kahlua";
     }
     else if(whiskeyBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=whiskey";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=whiskey";
     }
     else if(vermouthBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vermouth";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vermouth";
     }
     else if(brandyBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=brandy";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=brandy";
     }
     else if(absintheBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=absinthe";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=absinthe";
     }
     else if(beerBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=beer";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=beer";
     }
     else if(ciderBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=cider";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=cider";
     }
     else if(orangeJuiceBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Orange juice";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Orange juice";
     }
     else if(lemonadeBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemonade";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemonade";
     }
     else if(pineappleJuiceBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Pineapple juice";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Pineapple juice";
     }
     else if(lemonBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemon";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lemon";
     }
     else if(limeBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lime";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Lime";
     }
     else if(cranberryJuiceBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Cranberry juice";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Cranberry juice";
     }
     else if(coconutMilkBox == true){
-        x = "http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Coconut milk";
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Coconut milk";
     }
     else{
-        x = "http://www.thecocktaildb.com/api/json/v1/1/random.php"
+        x = "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/random.php"
     }
 
     //Return x
@@ -204,7 +204,7 @@ function getResults(){
                 //Use ajax to get all the other information about an individual cocktail
                 $.ajax({
                     type: "GET",
-                    url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php&s=" + title,
+                    url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php&s=margarita" + title,
                     success: function(response){
 
                         //Get the response from the API
