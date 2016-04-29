@@ -206,7 +206,7 @@ function getResults(){
                     type: "GET",
                     url: "http://rheanneapp.azurewebsites.net/theprox.php?url=http://www.thecocktaildb.com/api/json/v1/1/search.php&s=" + title,
                     success: function(response){
-
+                        console.log(response);
                         //Get the response from the API
                         var cocktails = response.drinks;
 
