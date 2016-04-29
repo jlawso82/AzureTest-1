@@ -209,10 +209,12 @@ function getResults(){
                         console.log(response);
                         //Get the response from the API
                         var cocktails = response.drinks;
-                        if(cocktails.drinks) {
+
 
                             //Create a for loop to iterate through every cocktail
                             for (var j = 0; j < cocktails.length; j++) {
+
+                                if(cocktails[j]){
 
                                 //Get the first cocktail
                                 var y = cocktails[j];
